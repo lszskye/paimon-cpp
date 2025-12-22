@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classpaimon_1_1_global_index_evaluator" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>paimon::GlobalIndexEvaluator</compoundname>
+    <includes refid="global__index__evaluator_8h" local="no">/home/runner/work/paimon-cpp/paimon-cpp/include/paimon/global_index/global_index_evaluator.h</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpaimon_1_1_global_index_evaluator_1a7c1738f37b2eba31e2c41585b520cb56" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual paimon::GlobalIndexEvaluator::~GlobalIndexEvaluator</definition>
+        <argsstring>()=default</argsstring>
+        <name>~GlobalIndexEvaluator</name>
+        <qualifiedname>paimon::GlobalIndexEvaluator::~GlobalIndexEvaluator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/paimon-cpp/paimon-cpp/include/paimon/global_index/global_index_evaluator.h" line="29" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classpaimon_1_1_global_index_evaluator_1ab79b9e2be9932f918e6d8ea4a68a4b18" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classpaimon_1_1_result" kindref="compound">Result</ref>&lt; std::optional&lt; std::shared_ptr&lt; <ref refid="classpaimon_1_1_global_index_result" kindref="compound">GlobalIndexResult</ref> &gt; &gt; &gt;</type>
+        <definition>virtual Result&lt; std::optional&lt; std::shared_ptr&lt; GlobalIndexResult &gt; &gt; &gt; paimon::GlobalIndexEvaluator::Evaluate</definition>
+        <argsstring>(const std::shared_ptr&lt; Predicate &gt; &amp;predicate)=0</argsstring>
+        <name>Evaluate</name>
+        <qualifiedname>paimon::GlobalIndexEvaluator::Evaluate</qualifiedname>
+        <param>
+          <type><ref refid="memory__pool_8h_1a147ba4ba34a215b3a4f3a95c1ee11704" kindref="member">const</ref> std::shared_ptr&lt; <ref refid="classpaimon_1_1_predicate" kindref="compound">Predicate</ref> &gt; &amp;</type>
+          <declname>predicate</declname>
+        </param>
+        <briefdescription>
+<para>Evaluates a predicate against the global index. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>predicate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The filter predicate to evaluate. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <computeroutput><ref refid="classpaimon_1_1_result" kindref="compound">Result</ref></computeroutput> containing:<itemizedlist>
+<listitem><para><computeroutput>std::nullopt</computeroutput> if the predicate cannot be evaluated by this index (e.g., field has no index),</para>
+</listitem><listitem><para>A <computeroutput>std::shared_ptr&lt;<ref refid="classpaimon_1_1_global_index_result" kindref="compound">GlobalIndexResult</ref>&gt;</computeroutput> if evaluation succeeds. The <computeroutput><ref refid="classpaimon_1_1_global_index_result" kindref="compound">GlobalIndexResult</ref></computeroutput> indicates the matching rows (e.g., via row ID bitmaps).</para>
+</listitem></itemizedlist>
+</para>
+</simplesect>
+<simplesect kind="note"><para>Top-K predicates are <bold>not handled</bold> by this method. Use <computeroutput><ref refid="classpaimon_1_1_global_index_reader_1a659382923c3e48a1e7d81b0d973fd526" kindref="member">GlobalIndexReader::VisitTopK()</ref></computeroutput> for Top-K specific index evaluation. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/paimon-cpp/paimon-cpp/include/paimon/global_index/global_index_evaluator.h" line="41" column="20"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Abstract base class for evaluating predicates against a global index. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/paimon-cpp/paimon-cpp/include/paimon/global_index/global_index_evaluator.h" line="27" column="1" bodyfile="/home/runner/work/paimon-cpp/paimon-cpp/include/paimon/global_index/global_index_evaluator.h" bodystart="27" bodyend="43"/>
+    <listofallmembers>
+      <member refid="classpaimon_1_1_global_index_evaluator_1ab79b9e2be9932f918e6d8ea4a68a4b18" prot="public" virt="pure-virtual"><scope>paimon::GlobalIndexEvaluator</scope><name>Evaluate</name></member>
+      <member refid="classpaimon_1_1_global_index_evaluator_1a7c1738f37b2eba31e2c41585b520cb56" prot="public" virt="virtual"><scope>paimon::GlobalIndexEvaluator</scope><name>~GlobalIndexEvaluator</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
